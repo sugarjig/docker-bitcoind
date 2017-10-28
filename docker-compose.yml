@@ -1,0 +1,14 @@
+version: "3"
+services:
+  bitcoind:
+    build:
+      context: .
+    image: bitcoind:0.15.0
+    volumes: bitcoind:/var/lib/bitcoind
+    ports:
+      - "8333:8333"
+    deploy:
+      mode: global
+
+volumes:
+  bitcoind:
